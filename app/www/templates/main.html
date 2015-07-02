@@ -1,6 +1,6 @@
 <ion-view>
   <ion-pane>
-    <p class="noMoreBooks">No more books left :(</p>
+    <p class="noMoreBooks">No more events left :(</p>
       <td-cards>
         <td-card id="td-card" ontouchstart="this.classList.toggle('hover');" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
         on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" ng-click="showText()">
