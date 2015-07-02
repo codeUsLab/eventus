@@ -123,12 +123,6 @@ angular.module("starter.services", [])
       });
     };
 
-    // var changePassword = function(user){
-    // };
-
-    // var changeEmail = function(user){
-    // };
-
     return {
       getUsername: getUsername,
       changeUsername: changeUsername,

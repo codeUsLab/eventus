@@ -5,6 +5,7 @@ angular.module("starter.auth", [])
   $scope.user = {};
 
   $scope.signin = function () {
+    
     Auth.signin()
       .then(function (authResult) {
         console.log(authResult);
@@ -60,7 +61,4 @@ angular.module("starter.auth", [])
     return !!$window.localStorage.getItem("com.starter");
   };
 
-  // $scope.refreshUser = function (cb){
-
-  // }
 });
