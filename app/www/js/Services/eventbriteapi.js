@@ -26,9 +26,10 @@ angular.module('starter.services')
     //   miwithin: 5, // # of miles within ZIP code
     //   categories: '101,103,105', // comma-delimited IDs
     // }
-    FetchEvents.zip = null;
+    // FetchEvents.zip = null;
 
     FetchEvents.getEvents = function(parameters, page) {
+      console.log('params within getEvents: ', parameters);
       parameters.zip = parameters.zip || FetchEvents.zip;
       return FetchEvents.getLatLongFromZip(parameters.zip)
       .then(function(results) {

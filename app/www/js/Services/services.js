@@ -155,7 +155,7 @@ angular.module("starter.services", [])
     var removeFromStack = function (index) {
       myStack.splice(index, 1);
     };
-
+    
     return {
       addToStack: addToStack,
       getStack: getStack,
@@ -192,7 +192,7 @@ angular.module("starter.services", [])
   //       return resp.data;
   //     });
   //   };   .then(function (resp){
-
+   
 
 
 

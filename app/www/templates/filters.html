@@ -2,16 +2,16 @@
   <ion-content>
     <h1>Filters</h1>
     <div class="category-buttons">
-        <button ng-repeat="(id,catname) in categories" type="button" class="button" ng-class="{'button-assertive': isActive({{id}}), 'button-stable': !isActive({{id}})}" ng-click="addRemoveCategory({{id}}, {{catname}})">
-          {{catname}}
+        <button ng-repeat="category in categories" type="button" class="button" ng-class="{'button-assertive': isActive({{category[0]}}), 'button-stable': !isActive({{category[0]}})}" ng-click="addRemoveCategory({{category}})">
+          {{category[1]}}
         </button>
     </div>
     <h1>ZIP Code</h1>
     <div>
 	    <form novalidate>
-	    	<input type="text" ng-model="zip"><br>
+	    	<input type="text" ng-model="params.zip"><br>
 	    	Radius (in mi.): 
-	    	<select ng-model="miwithin" convert-to-number>
+	    	<select ng-model="params.miwithin" convert-to-number>
 				  <option value="1">1</option>
 				  <option value="5">5</option>
 				  <option value="10">10</option>

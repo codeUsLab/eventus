@@ -2,7 +2,7 @@
 
 angular.module("starter.cards", [])
 
-.controller("CardsCtrl", function($scope, $ionicSideMenuDelegate, $rootScope, StackFilters, FetchEvents, EventChoices){
+.controller("CardsCtrl", function($scope, $ionicSideMenuDelegate, $rootScope, $location, StackFilters, FetchEvents, EventChoices){
 
   //prevent side menu from dragging out with cards
   $ionicSideMenuDelegate.canDragContent(false);
@@ -11,13 +11,19 @@ angular.module("starter.cards", [])
     return StackFilters.categoriesSelected.length;
   }, function(){
     console.log("change in filter was noticed");
-    $scope.getEvents($scope.userId, 10);
+  });
+
+  $rootScope.$on('updatedFilters', function(event, params) {
+    console.log('CardCtrl heard event');
+    $scope.getEvents(params, 1)
+      .then(function() {
+        $location.path("/app/main");
+      });
   });
 
   // retrieves books from the database
-  $scope.getEvents = function(userId, count){
-    var params = {zip: 94114, miwithin: 10, categories: '101,103,105'};
-    FetchEvents.getEvents(params, 1)
+  $scope.getEvents = function(parameters, page){
+    return FetchEvents.getEvents(parameters, page)
       .then(function(results){
         console.log(FetchEvents.events);
         $scope.cards = FetchEvents.events;
@@ -30,6 +36,8 @@ angular.module("starter.cards", [])
     //     $scope.currentCard = $scope.cards[$scope.cards.length - 1];
     //   });
   };
+  var params = {zip: FetchEvents.zip, miwithin: 5, categories: '101,103,105'};
+  $scope.getEvents(params, 1);
 
   $scope.userId = '000000'//$rootScope.currentUser.id;  //delete this line
 

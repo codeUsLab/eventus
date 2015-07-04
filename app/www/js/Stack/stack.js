@@ -3,6 +3,7 @@
 angular.module("starter.stack", [])
 
 .controller("StackCtrl", function($scope, EventChoices, $rootScope, Auth, Gcal) {
+
     $scope.addToGcal = function(ebObject) {
       Auth.checkAuth()
       .then(function(){
