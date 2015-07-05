@@ -7,37 +7,14 @@
 
     <form name="signinForm" novalidate ng-submit="signinForm.$valid && signin()" class="css-form">
       <!-- <div class="list"> -->
-        <div class="row">
-          <div class="col"></div>
-          <div class="col">
-            <label class="item item-input">
-              <span class="input-label">Zip Code</span>
-              <input type="text" ng-pattern="user.pattern" name="input" ng-required="true" ng-model="user.zip" ng-minlength="5" required>
-            </label>
-          </div>
-          <div class="col"></div>
-        </div>
-        <div class="row">
-         <div class="col"></div>
-         <div class="col">
-            <label class="item">
-              <button class="button button-block button-positive" ng-disabled="signingForm$invalid" type="submit">Sign In With Google</button>
-            </label>
-          </div>
-          <div class="col"></div>
-        </div>
-      <!-- </div> -->
-      <div class="row">
-        <div class="col"></div>
-        <div class="col">
-          <div role="alert">
-            <span class="error" ng-show="signinForm.input.$error.required">Required!</span>
-            <span class="error" ng-show="signinForm.input.$error.pattern">Zip Code!</span>
-          </div>
-        </div>
-        <div class="col"></div>
+
+      <div class="signin">
+        <label class="item item-input">
+
+        <input type="text" placeholder="Zip Code"ng-pattern="user.pattern" name="input" ng-required="true" ng-model="user.zip" ng-minlength="5" required>
+        
       </div>
-    </form>
+      <button class="signin button-dark button button-block button-positive" ng-disabled="signingForm$invalid" type="submit">Sign In With Google</button>
 
   </ion-content>
 </ion-view>
