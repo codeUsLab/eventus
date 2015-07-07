@@ -24,10 +24,31 @@
 }
 
 /* Sign In and up */
+.input-label {
+  text-align: center
+}
 .logo {
   text-align: center;
   border-bottom: 3px solid #14CCBC;
 }
+.signin {
+  max-width: 200px;
+  margin: auto;
+  margin-top: 50px;
+
+}
+.button-dark {
+  opacity: .6;
+  font-weight: 900;
+  border-style: none;
+  font-size: 18px;
+}
+.splash-page {
+    background-image: url(../img/sfdock.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 
 .redirect-msg {
   padding: 10px;

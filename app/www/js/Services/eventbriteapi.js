@@ -4,7 +4,7 @@ angular.module('starter.services')
   .factory("FetchEvents", ['$http', function($http){
     // post potential user to server which will determine if legit
 
-    var llurlbase = 'http://maps.googleapis.com/maps/api/geocode/json?address=';
+    var llurlbase = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
     var eburlbase = 'https://www.eventbriteapi.com/v3/events/search/?';
     var ebtken = 'MKFL4P7OGOVRM3P7IV6L';
     var FetchEvents = {};
@@ -20,16 +20,13 @@ angular.module('starter.services')
       });
     };
 
-  // should accept an object with following format:
+    // should accept an object with following format:
     // parameters = {
     //   zip: 55555,
     //   miwithin: 5, // # of miles within ZIP code
     //   categories: '101,103,105', // comma-delimited IDs
     // }
-    // FetchEvents.zip = null;
-
     FetchEvents.getEvents = function(parameters, page) {
-      console.log('params within getEvents: ', parameters);
       parameters.zip = parameters.zip || FetchEvents.zip;
       return FetchEvents.getLatLongFromZip(parameters.zip)
       .then(function(results) {
@@ -45,6 +42,7 @@ angular.module('starter.services')
         return $http.get(url)
           .then(function(results) {
             FetchEvents.events = results.data.events;
+            return results.data.events;
           })
       });
     };
