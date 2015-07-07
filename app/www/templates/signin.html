@@ -1,4 +1,4 @@
-<ion-view view-title="EventUs :: A Tinder for Events" hide-nav-bar="true" class="splash-page" ng-controller="AuthCtrl">
+<ion-view view-title="Connect To Community" hide-nav-bar="true" class="splash-page" ng-controller="AuthCtrl">
   <ion-content scroll="false">
 
   <div class="logo">
@@ -11,7 +11,7 @@
       <div class="signin">
         <label class="item item-input">
 
-        <input type="text" placeholder="Zip Code"ng-pattern="user.pattern" name="input" ng-required="true" ng-model="user.zip" ng-minlength="5" required>
+        <input type="text" placeholder="{{user.location}}"ng-pattern="user.pattern" name="input" ng-required="true" ng-model="user.zip" ng-minlength="5" required>
         
       </div>
       <button class="signin button-dark button button-block button-positive" ng-disabled="signingForm$invalid" type="submit">Sign In With Google</button>

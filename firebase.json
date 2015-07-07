@@ -1,0 +1,9 @@
+{
+  "firebase": "goeventus",
+  "public": "app/www",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

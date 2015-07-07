@@ -2,7 +2,7 @@
 
 angular.module("starter.filters", [])
 
-.controller("FiltersCtrl", function($scope, $rootScope, StackFilters, FetchEvents) {
+.controller("FiltersCtrl", function($scope, $rootScope, $location, StackFilters, FetchEvents) {
 
   $scope.categories = [[103,'Music'],[101,'Business'],[110,'Food & Drink'],[113,'Community'],[105,'Arts'],[104,'Film & Media'],[108,'Sports & Fitness'],[107,'Health'],[102,'Science & Tech'],[109,'Travel & Outdoor'],[111,'Charity & Causes'],[114,'Spirituality'],[115,'Family & Education'],[116,'Holiday'],[112,'Government'],[106,'Fashion'],[117,'Home & Lifestyle'],[118,'Auto, Boat & Air'],[119,'Hobbies'],[199,'Other']];
   $scope.filteredCategories = [];
@@ -47,8 +47,8 @@ angular.module("starter.filters", [])
       catsTemp = catsTemp.concat($scope.filteredCategories[i][0]);
     }
     $scope.params.categories = catsTemp.join(',');
-    console.log('scope params before call: ', $scope.params);
     $rootScope.$emit('updatedFilters', $scope.params);
+    $location.path("/app/main");
   };
 
 });

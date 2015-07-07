@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "ionic-contrib-tinder-cards": "*",
-    "oauth-js": "~0.4.3"
+    "oauth-js": "~0.4.3",
+    "firebase": "~2.2.7"
   },
   "resolutions": {
     "ionic-service-deploy": "~0.0.6"
